@@ -30,6 +30,14 @@ section {
   padding-top: 40px;
 }
 
+img {
+  opacity: .5;
+  transition: opacity .5s;
+}
+
+img.appear {
+  opacity: 1;
+}
 
 /* header */
 header {
@@ -61,7 +69,6 @@ header .container {
   justify-content: space-between;
   width: 90%;
   margin: 0 auto;
-  /* background-color: silver; */
 }
 
 #topLogo {
@@ -141,6 +148,8 @@ header .container {
   height: 100vh;
   overflow: hidden;
   background-image: url(img/insidecafe.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 #main-div {

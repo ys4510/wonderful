@@ -65,4 +65,29 @@
       email.classList.remove("is-invalid");
     }
   });
+
+  // add '.showUp' class to elements to appear
+  const imgs = document.querySelectorAll("img");
+
+  function showUpFunc(entries, obs) {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) {
+        return;
+      }
+
+      entry.target.classList.add("appear");
+      obs.unobserve(entries[0].target);
+    });
+  }
+
+  const options = {
+    threshold: 0.2,
+    rootMargin: "0px 0px -100px",
+  };
+
+  const observer = new IntersectionObserver(showUpFunc, options);
+
+  imgs.forEach((img) => {
+    observer.observe(img);
+  });
 }
